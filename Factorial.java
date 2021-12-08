@@ -8,7 +8,6 @@
 */
 
 import java.util.Scanner;
-import java.util.ArrayList;
 
 /**
 * This is a program that blanks.
@@ -36,13 +35,17 @@ final class Factorial {
     * The reversing() function reverses strings.
     *
     * @return answer of factorial
-    * @param inputtedInteger inputted integer's factorial will be solved 
+    * @param inputtedInteger inputted integer's factorial will be solved
     */
-    public static int factorial(int inputtedInteger) {
+    public static int factorial(final int inputtedInteger) {
 
+        // if the integer reaches zero return a one
         if (inputtedInteger == 0) {
             return (1);
 
+        // else return the integer minus one back into itself, once the if
+        // statement above is triggered all the numbers returned will be
+        // multiplied with each other
         } else {
             return factorial(inputtedInteger - 1) * inputtedInteger;
 
@@ -71,7 +74,7 @@ final class Factorial {
 
                 // push input to factorial() function
 
-                // factorialAnswer = 
+                // Other function is called
                 factorialAnswer = factorial(inputtedInteger);
 
                 // Outputs something
