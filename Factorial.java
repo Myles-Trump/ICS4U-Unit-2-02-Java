@@ -38,15 +38,15 @@ final class Factorial {
     * @return answer of factorial
     * @param inputtedInteger inputted integer's factorial will be solved 
     */
-    public static String factorial(int inputtedInteger) {
+    public static int factorial(int inputtedInteger) {
 
-        while (inputtedInteger > 0) {
-            ArrayList<Integer> numbers = new ArrayList<Integer>();
-            numbers.add(inputtedInteger);
-            inputtedInteger = inputtedInteger - 1;
-            System.out.println(numbers);
+        if (inputtedInteger == 0) {
+            return (1);
+
+        } else {
+            return factorial(inputtedInteger - 1) * inputtedInteger;
+
         }
-        return (inputtedInteger);
     }
 
     /**
@@ -72,11 +72,11 @@ final class Factorial {
                 // push input to factorial() function
 
                 // factorialAnswer = 
-                factorial(inputtedInteger);
+                factorialAnswer = factorial(inputtedInteger);
 
                 // Outputs something
-                // System.out.println("\nYour factorial is: "
-                //     + factorialAnswer);
+                System.out.println("\nYour factorial is: "
+                    + factorialAnswer);
 
         } catch (java.util.InputMismatchException errorCode) {
         // Block of code to handle errors
