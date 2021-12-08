@@ -8,11 +8,12 @@
 */
 
 import java.util.Scanner;
+import java.util.ArrayList;
 
 /**
 * This is a program that blanks.
 */
-final class Template {
+final class Factorial {
 
     /**
     * Constant.
@@ -27,7 +28,7 @@ final class Template {
     * @throws IllegalStateException
     *
     */
-    private Template() {
+    private Factorial() {
         throw new IllegalStateException("Cannot be instantiated");
     }
 
@@ -37,15 +38,15 @@ final class Template {
     * @return answer of factorial
     * @param inputtedInteger inputted integer's factorial will be solved 
     */
-    public static String factorial(final int inputtedInteger) {
-        if (inputtedInteger == 0) {
-            return (inputtedInteger + 1);
+    public static String factorial(int inputtedInteger) {
 
-        } else {
-            return factorial(inputtedInteger.substring(1)) * inputtedInteger.charAt(0);
-
+        while (inputtedInteger > 0) {
+            ArrayList<Integer> numbers = new ArrayList<Integer>();
+            numbers.add(inputtedInteger);
+            inputtedInteger = inputtedInteger - 1;
+            System.out.println(numbers);
         }
-
+        return (inputtedInteger);
     }
 
     /**
@@ -56,6 +57,7 @@ final class Template {
     public static void main(final String[] args) {
         // variables
         int factorialAnswer;
+        int inputtedInteger;
 
         final Scanner userInput = new Scanner(System.in);
 
@@ -65,15 +67,16 @@ final class Template {
                 System.out.print("Enter an integer to factorial: ");
 
                 // Stores input as integer
-                int inputtedInteger = userInput.nextInt();
+                inputtedInteger = userInput.nextInt();
 
                 // push input to factorial() function
 
-                factorialAnswer = factorial(inputtedInteger);
+                // factorialAnswer = 
+                factorial(inputtedInteger);
 
                 // Outputs something
-                System.out.println("\nYour factorial is: "
-                    + factorialAnswer);
+                // System.out.println("\nYour factorial is: "
+                //     + factorialAnswer);
 
         } catch (java.util.InputMismatchException errorCode) {
         // Block of code to handle errors
